@@ -55,3 +55,4 @@ function getRandomColor (){
 function h2ClickHandler (){
      h2.style.backgroundColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
 };
+h2.addEventListener('click', h2ClickHandler);
