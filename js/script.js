@@ -8,7 +8,8 @@ const intentos = 6;
 const div = document.querySelector('div#container');
 const circles = 4;
 let square = document.querySelectorAll('div#container div');
-let h2 = document.querySelector('h2')
+let h2 = document.querySelector('h2');
+let p = document.querySelector('p');
 
 // console.log(square); muestra ok todos los div con class
 
@@ -20,12 +21,15 @@ let h2 = document.querySelector('h2')
 
 function resetClickHandler() {
      console.log('click');
-     reset.style.backgroundColor = '#98FF19';
+     reset.style.backgroundColor = '#0a0a0a';
+     reset.style.color = '#ffffff';
 };
 
 // la funcion de arriba, esta llamada aqui abajo 
 //(resetClikHandler)
 reset.addEventListener('click', resetClickHandler);
+reset.addEventListener('click', h2ClickHandler);
+reset.addEventListener('click', pClickHandler);
 
 // He creado tambien como eliminarlo, para probar si funciona
 // que con remove, vuelva otra vez al inicio. Lo voy a 
@@ -50,9 +54,16 @@ function getRandomColor (){
 
 };
 
-
+p.textContent = `RGB(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
 
 function h2ClickHandler (){
-     h2.style.backgroundColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+     h2.style.backgroundColor = `RGB(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
 };
 h2.addEventListener('click', h2ClickHandler);
+
+function pClickHandler(){
+     p.textContent = `RGB(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+}
+p.addEventListener('click', pClickHandler);
+
+
