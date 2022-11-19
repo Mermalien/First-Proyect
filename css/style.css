@@ -8,13 +8,14 @@ body{
     min-height: 100vh;
     min-width: 100vw;
     border: solid black;
-   background-color: grey;
+   background-color: white;
 }
 
 h1{
     text-align: center;
     font-style: italic;
     font-size: 40px;
+    margin-top: 2rem;
 }
 
 main{
@@ -24,30 +25,49 @@ main{
 #displayRGB{
     padding: 0.8rem;
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-size: 30px;
-    height: 4rem;
+    height: 5rem;
+    min-width: 100vw;
 }
 
 #infoBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     height: 50px;
-    border: solid black;
-    text-align: center;
     background-color: white;
 }
 
 #reset{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     font-size: 20px;
-    margin-left: 15rem;
     padding: 7px;
     height: 2.7rem;
     width: 15rem;
+    background-color: black;
+    color: white;
 }
 
 #message{
-    display: inline;
+    font-size: 30px;
+    color: rgb(151, 3, 196);
+    
+    
+}
+
+
+ul{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    color: black;
+    font-size: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style:none;
 }
 
 
@@ -57,15 +77,14 @@ main{
 
 
 .square{
-    border-radius: 160px;
-    margin-top: 20rem;
-    margin-left: 10rem;
-    border: solid 2px black;
-    height: 10rem;
-    width: 10rem;
+    border-radius: 40px;
+    border: solid 1px black;
+    height: 15rem;
+    width: 15rem;
     display: inline-block;
-    background-color: white;
-
+    margin-top: 15rem;
+    margin-left: 5.8rem;
+    background-color: black;
 }
 
 footer{
