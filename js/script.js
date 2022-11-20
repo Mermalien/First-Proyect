@@ -92,7 +92,7 @@ let contador =0;
 let intentos = 5;
 
 function squareClickHandler(event){
-    //message.textContent=`Te quedan ${intentos} intentos`
+    message.textContent=`Te quedan ${intentos} intentos`
     square1.addEventListener('click', ()=>{
     
         if(square1.style.backgroundColor === colorAdivinar[3]){
@@ -144,30 +144,37 @@ function squareClickHandler(event){
     
     }
         
-    for(let i=0; i<=2; i++){
-        
-        if(fallos === 3){
-            fallos.textContent='HAS PERDIDO';
-            console.log(`Has perdido`);
-            contador=0;
-            break;
-        }if(aciertos === 3){
-            aciertos.textContent='HAS GANADO';
-            contador=0;
-            break;
-        }else if(contador === 3){
-            contador=0;
-            intentos = 0;
-            break;
-        }
-    }
-    
     for(let i=6; i>=0; i--){
         if(intentos === 0){
+            contador=0;
             break;
         }
         break
     }
+    
+    for(let i=0; i<=2; i++){
+        
+        if(fallos === 3){
+            fallos.textContent=`HAS PERDIDO`;
+            console.log(`Has perdido`);
+            contador=0;
+           break;
+            
+        
+        }if(aciertos === 3){
+            aciertos.textContent='HAS GANADO';
+            contador=0;
+            
+            break;
+        
+        }else if(contador === 3){
+            contador=0;
+            
+            break;
+         }
+    }
+    
+    
 }
 
 square1.addEventListener('click', squareClickHandler);
