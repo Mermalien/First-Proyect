@@ -97,3 +97,25 @@ footer{
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
 }
+
+h3 {
+    background-color: black;
+}
+
+#time {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #47035c, 0 0 40px #47035c, 0 0 50px #47035c, 0 0 60px #47035c, 0 0 70px #47035c;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #d904ec, 0 0 40px #d904ec, 0 0 50px #d904ec, 0 0 60px #d904ec, 0 0 70px #d904ec, 0 0 80px #d904ec;
+    }
+  }

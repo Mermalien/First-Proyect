@@ -63,15 +63,22 @@ function coloresAlea () {
  
      for (const cuadrado of squares) {
          
-         let modifyColor = modificarColorOriginal(colorAdivinar);
- 
-         cuadrado.style.backgroundColor = `RGB(${modifyColor[0]}, ${modifyColor[1]}, ${modifyColor[2]})`;
- 
          
+ 
+         console.log(colorAdivinar[3]);
+         console.log(cuadrado.id);
          
-         if (cuadrado.id === colorAdivinar[3]) {
+         if (parseInt(cuadrado.id) === colorAdivinar[3]) {
             
              cuadrado.style.backgroundColor = `RGB(${colorAdivinar[0]}, ${colorAdivinar[1]}, ${colorAdivinar[2]})`;
+
+        
+         }
+
+         else {
+            let modifyColor = modificarColorOriginal(colorAdivinar);
+ 
+         cuadrado.style.backgroundColor = `RGB(${modifyColor[0]}, ${modifyColor[1]}, ${modifyColor[2]})`;
          }
      }
      console.log('click en jugar');
@@ -92,11 +99,14 @@ let contador =0;
 let intentos = 5;
 
 function squareClickHandler(event){
-    message.textContent=`Te quedan ${intentos} intentos`
+   message.textContent=`Te quedan ${intentos} intentos`
     square1.addEventListener('click', ()=>{
     
-        if(square1.style.backgroundColor === colorAdivinar[3]){
+        if(square1.style.backgroundColor.toUpperCase() === p.textContent){
             console.log('square1 HAS ACERTADO');
+            contador++;
+        intentos--;
+        aciertos.textContent = `Aciertos: ${contador}`;
         }else{
             console.log('square1 HAS FALLADO');
         }
@@ -104,8 +114,11 @@ function squareClickHandler(event){
     
     square2.addEventListener('click', ()=>{
         
-        if(square2.style.backgroundColor === colorAdivinar[3]){
+        if(square2.style.backgroundColor.toUpperCase() === p.textContent){
             console.log('square2 HAS ACERTADO');
+            contador++;
+        intentos--;
+        aciertos.textContent = `Aciertos: ${contador}`;
         }else{
             console.log('square2 HAS FALLADO');
         }
@@ -113,17 +126,26 @@ function squareClickHandler(event){
     
     square3.addEventListener('click', ()=>{
         
-        if(square3.style.backgroundColor === colorAdivinar[3]){
+        if(square3.style.backgroundColor.toUpperCase() === p.textContent){
             console.log('square3 HAS ACERTADO');
+            contador++;
+        intentos--;
+        aciertos.textContent = `Aciertos: ${contador}`;
         }else{
             console.log('square3 HAS FALLADO'); 
         }
     })
     
     square4.addEventListener('click', ()=>{
+
+        console.log(square4.style.backgroundColor.toUpperCase());
+        console.log(p.textContent);
         
-        if(square4.style.backgroundColor === colorAdivinar[3]){
+        if(square4.style.backgroundColor.toUpperCase() === p.textContent){
             console.log('square4 HAS ACERTADO');
+            contador++;
+        intentos--;
+        aciertos.textContent = `Aciertos: ${contador}`;
         }else{
             console.log('square4 HAS FALLADO');   
         }
@@ -181,3 +203,12 @@ square1.addEventListener('click', squareClickHandler);
 square2.addEventListener('click', squareClickHandler);
 square3.addEventListener('click', squareClickHandler);
 square4.addEventListener('click', squareClickHandler);
+
+const time = document.getElementById('time');
+const interval = setInterval(()=>{
+
+    const local = new Date();
+    time.innerHTML = local.toLocaleTimeString();
+}, 1000);
+
+
